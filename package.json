@@ -1,0 +1,20 @@
+{
+  "name": "windows-stats-quirk",
+  "version": "0.0.1",
+  "description": "Demonstrate quirk in node/libuv",
+  "author": "Erik Kemperman",
+  "repository": "erikkemperman/windows-stats-quirk",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "test": "mocha --async-only"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "expect": "^1.19.0",
+    "mocha": "^3.5.0"
+  }
+}
