@@ -12,5 +12,17 @@ describe('windows quirk', function() {
       done();
     });
   });
+
+  it('returns different dev from fs.lstat and fs.lstatSync', function(done) {
+
+    fs.symlinkSync('package.json', 'link.json', 'file');
+    var lstatSync = fs.lstatSync('link.json');
+
+    fs.lstat('link.json', function(err, lstatAsync) {
+      fs.unlinkSync('link.json');
+      expect(lstatSync.dev).toBe(lstatAsync.dev); // fails on Windows
+      done();
+    });
+  });
 });
 
